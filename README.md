@@ -1,2 +1,7 @@
 # Base-Converter-API
-Made for a project.
+Creates a flask server to convert decimals to any base you want.
+
+Use: 127.0.0.1:5000/<number>/<base>
+
+# Config
+The config File can change any value to represent a number, the project comes inboard with the hex conversion one.
