@@ -1,7 +1,7 @@
 def readConfig(filename):
     param = []
     defined_param = {}
-    with open(filename, "r") as f:
+    with open(filename, "r") as f:  
         undParm = f.read().split("\n")
         for i in undParm:
             param.append(i.split("="))
@@ -16,11 +16,11 @@ def decimalParaBase(num, base, param=None):
     arrayDoProcesso = []
     num = int(num)
     base = int(base)
-    while num >= base:
+    while num > base:
         num_sobra = int(num%base)
         arrayDoProcesso.append(num_sobra)
         num = int(num//base)
-    arrayDoProcesso.append(int(num%base))
+    arrayDoProcesso.append(num)
     if param == None:
         for i in range(len(arrayDoProcesso)):
             final+=str(arrayDoProcesso[-i-1])
@@ -32,11 +32,11 @@ def decimalParaBase(num, base, param=None):
     return final
 
 def baseParaDecimal(num, base):
-    split_num = list(reversed(num.split(" ")))
+    split_num = list(reversed(num.split("-")))
     base = int(base)
     currentSplit = 0
     final = 0
     for i in split_num:
         final += int(i)*(pow(base, currentSplit))
         currentSplit+=1
-    return final
+    return str(final)
