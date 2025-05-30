@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask
 from converter import decimalParaBase, readConfig, baseParaDecimal
 
 app = Flask("Converter API")
@@ -11,7 +11,7 @@ def home():
 def api_call_db(numero, base1, base2):
     if (base1 == "1" or base2 == "1"): return "Base 1 não é aceita"
     try:
-        return decimalParaBase(baseParaDecimal(numero, base1), base2, readConfig("hexdecimal.conv"))
+        return decimalParaBase(baseParaDecimal(numero, base1), base2, readConfig("config.txt"))
     except ZeroDivisionError:
         return "Base 0"
 
