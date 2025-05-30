@@ -12,11 +12,12 @@ def readConfig(filename):
     return defined_param
 
 def decimalParaBase(num, base, param=None):
+    if num == "ERRO ANIMAL": return "Numero maior ou igual a primeira base."
     final = ""
     arrayDoProcesso = []
     num = int(num)
     base = int(base)
-    while num > base:
+    while num >= base:
         num_sobra = int(num%base)
         arrayDoProcesso.append(num_sobra)
         num = int(num//base)
@@ -37,6 +38,7 @@ def baseParaDecimal(num, base):
     currentSplit = 0
     final = 0
     for i in split_num:
+        if int(i) >= base: return "ERRO ANIMAL"
         final += int(i)*(pow(base, currentSplit))
         currentSplit+=1
     return str(final)
