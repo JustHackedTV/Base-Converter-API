@@ -33,7 +33,7 @@ def decimalParaBase(num, base, param=None):
     return final
 
 def baseParaDecimal(num, base):
-    split_num = list(reversed(num.split("-")))
+    split_num = list(reversed(list(num)))
     base = int(base)
     currentSplit = 0
     final = 0
